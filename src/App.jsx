@@ -25,6 +25,11 @@ const App = () => {
 
     }
     const remove = (id) => {
+        setNotes(() =>
+            notes.filter((element, index) => {
+                return index !== id;
+            })
+        )
         let data = localStorage.getItem('data');
         let notesObj = JSON.parse(data);
         notesObj.splice(id, 1);
